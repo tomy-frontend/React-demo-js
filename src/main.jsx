@@ -1,10 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+// 最初の雛形的なもの
+import  { StrictMode } from "react";
+import  { createRoot } from "react-dom/client";
+import  { App } from "./App";
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  //より堅実なルールでReactを書いていくよという宣言、必須でつける
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+); 
+

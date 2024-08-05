@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// 使い回しがしやすいように一つの関数単位でコンポーネント化していく、ファイルを作成していく
 
-function App() {
-  const [count, setCount] = useState(0)
+import { ColorFullMessage } from "./components/ColorFullMessage";
+
+//関数は大文字で始めるのがルール
+export const App = () => {
+
+  //JavaScript関数を記述することもできる
+  const onClickButton = () => alert()
+
+  //CSSのスタイルを定義することもできる！
+  const contentStyle = {
+    color: "#101010",
+    fontSize: "2em",
+    fontWeight: "bold",
+    padding: "0.5em",
+  };
+
+  const contentStyleB = {
+    color: "blue",
+    fontSize: "1em",
+    fontWeight: "bold",
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    //　返却するものはdiv等で囲わないといけないが、今はショートハンドで、空タグだけでいい！
+    <>      
+      <h1 style={contentStyle}>こんにちは！</h1>
 
-export default App
+      {/* ColorFullMessageでコンポーネント化できたものを表示できた！ */}
+      <ColorFullMessage color="blue">お元気か！！！！！！！</ColorFullMessage>
+      <ColorFullMessage color="green">超元気！！！</ColorFullMessage>
+      <button onClick={onClickButton}>ボタン</button>       
+    </>
+  );
+};

@@ -4,6 +4,8 @@ export const ColorFullMessage = ({ color, children }) => {
     //分割代入で下記記述をすると省略できる！
     // const { color, children } = props;
 
+    console.log("--message--");
+
     const contentStyleA = {
 
         //名前が同じなら省略できる！
